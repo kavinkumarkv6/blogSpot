@@ -1,0 +1,85 @@
+<?php
+    session_start();
+    if( isset( $_SESSION['user_details'] ) )
+    {
+        echo "<script>window.location.href='index';</script>";
+    }
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
+    <title>BlogSpot Register</title>
+    <link rel="stylesheet" href="assets/css/app.min.css">
+    <link rel="stylesheet" href="assets/bundles/bootstrap-social/bootstrap-social.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/components.css">
+    <link rel="stylesheet" href="assets/css/custom.css">
+    <link rel='shortcut icon' type='image/x-icon' href='assets/img/favicon.ico' />
+</head>
+<body>
+  <div class="loader"></div>
+  <div id="app">
+    <section class="section">
+      <div class="container mt-5">
+        <div class="row">
+          <div class="col-12 col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-6 offset-lg-3 col-xl-4 offset-xl-4">
+            <div class="card card-primary">
+              <div class="card-header">
+                <h4>Register</h4>
+              </div>
+              <div class="card-body">
+                <form method="POST" action="post_condition" class="needs-validation" novalidate="">
+                      <div class="form-group">
+                        <label for="user_name">User name</label>
+                        <input id="user_name" type="text" class="form-control" name="user_name" tabindex="1" required autofocus>
+                        <div class="invalid-feedback">
+                          Please fill in your name
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label for="email">Email Id</label>
+                        <input id="email" type="email" class="form-control" name="email_id" tabindex="1" required autofocus>
+                        <div class="invalid-feedback">
+                          Please fill in your email
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label for="mobile">Mobile no</label>
+                        <input id="mobile" type="tel" maxlength='10' pattern="[6-9]{1}[0-9]{9}" class="form-control" name="mobile_no" tabindex="1" required autofocus>
+                        <div class="invalid-feedback">
+                          Please fill in your mobile no
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <div class="d-block">
+                          <label for="password" class="control-label">Password</label>
+                          <div class="float-right">
+                          </div>
+                        </div>
+                        <input id="password" type="password" class="form-control" name="new_password" tabindex="2" required>
+                        <div class="invalid-feedback">
+                          please fill in your password
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <button type="submit" name="register" class="btn btn-primary btn-lg btn-block" tabindex="4">
+                          Register
+                        </button>
+                      </div>
+                      <div class="form-group">
+                          <a href="login">Login here...</a>
+                      </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script src="assets/js/app.min.js"></script>
+  <script src="assets/js/scripts.js"></script>
+</body>
+</html>
